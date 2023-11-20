@@ -11,6 +11,8 @@
 		F22E90EB2B0B8BC700B69EE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E90EA2B0B8BC700B69EE3 /* ContentView.swift */; };
 		F22E90ED2B0B8BCA00B69EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F22E90EC2B0B8BCA00B69EE3 /* Assets.xcassets */; };
 		F22E90F02B0B8BCA00B69EE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F22E90EF2B0B8BCA00B69EE3 /* Preview Assets.xcassets */; };
+		F22E90F72B0B8BE800B69EE3 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E90F62B0B8BE800B69EE3 /* LockView.swift */; };
+		F22E90FA2B0B8E9100B69EE3 /* LockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E90F92B0B8E9100B69EE3 /* LockViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		F22E90EA2B0B8BC700B69EE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F22E90EC2B0B8BCA00B69EE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F22E90EF2B0B8BCA00B69EE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F22E90F62B0B8BE800B69EE3 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		F22E90F92B0B8E9100B69EE3 /* LockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				F22E90E82B0B8BC700B69EE3 /* FaceAppApp.swift */,
 				F22E90EA2B0B8BC700B69EE3 /* ContentView.swift */,
+				F22E90FB2B0B90FD00B69EE3 /* Views */,
+				F22E90F82B0B8E8000B69EE3 /* ViewModels */,
 				F22E90EC2B0B8BCA00B69EE3 /* Assets.xcassets */,
 				F22E90EE2B0B8BCA00B69EE3 /* Preview Content */,
 			);
@@ -65,6 +71,22 @@
 				F22E90EF2B0B8BCA00B69EE3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F22E90F82B0B8E8000B69EE3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F22E90F92B0B8E9100B69EE3 /* LockViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F22E90FB2B0B90FD00B69EE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F22E90F62B0B8BE800B69EE3 /* LockView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,8 @@
 			files = (
 				F22E90EB2B0B8BC700B69EE3 /* ContentView.swift in Sources */,
 				F22E90E92B0B8BC700B69EE3 /* FaceAppApp.swift in Sources */,
+				F22E90F72B0B8BE800B69EE3 /* LockView.swift in Sources */,
+				F22E90FA2B0B8E9100B69EE3 /* LockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +294,13 @@
 				DEVELOPMENT_TEAM = 8YCKQZSJ86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to unlock your content securely.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +325,13 @@
 				DEVELOPMENT_TEAM = 8YCKQZSJ86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to unlock your content securely.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
