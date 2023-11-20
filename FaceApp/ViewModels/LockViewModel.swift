@@ -34,6 +34,9 @@ class LockViewModel: ObservableObject {
                 if let error = error {
                     print("Biometric authentication error: \(error.localizedDescription)")
                 }
+                
+                // Retry with alternative biometric (Touch ID)
+                self.retryAlternativeBiometricAuthentication()
             }
         }
     }
@@ -51,4 +54,24 @@ class LockViewModel: ObservableObject {
             completion(false, nil)
         }
     }
+    
+    private func authenticateWithTouchID(completion: @escaping (Bool, Error?) -> Void) {
+            let context = LAContext()
+
+            if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
+                let reason = "Unlock with Touch ID"
+                context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
+                    completion(success, error)
+                }
+            } else {
+                // Touch ID not available or not configured
+                completion(false, nil)
+            }
+        }
+    
+    private func retryAlternativeBiometricAuthentication() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                self?.unlock()
+            }
+        }
 }
